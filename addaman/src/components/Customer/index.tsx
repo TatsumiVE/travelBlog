@@ -26,7 +26,7 @@ export const userData = [
 const Customer = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   return (
-    <section>
+    <section id="testimonials">
       <div className="inner">
         <div className="customer">
           <div className="title">

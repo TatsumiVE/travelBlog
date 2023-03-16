@@ -22,7 +22,7 @@ const Recommended = () => {
   const [active, setActive] = useState(1);
 
   return (
-    <section id="recommend">
+    <section id="places">
       <div className="inner">
         <div className="title">
           <h2>Recommended Destinations</h2>

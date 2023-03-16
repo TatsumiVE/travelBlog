@@ -40,6 +40,12 @@ const Login = () => {
                 Login
               </a>
             </div>
+
+            <div className="button">
+              <a href="/register" target="_blank">
+                Register
+              </a>
+            </div>
           </form>
         </div>
       </div>
