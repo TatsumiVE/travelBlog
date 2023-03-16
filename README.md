@@ -3,7 +3,7 @@ react js pj
 
 
 
-git branch dev ကို clone ပါ
+git clone ပါ
 
 npm install 
 
