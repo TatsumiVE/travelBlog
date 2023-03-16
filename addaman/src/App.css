@@ -194,8 +194,10 @@ header {
 
 .customerCard {
   width: 100%;
-  max-width: 800px;
   margin: auto;
+  font-family: var(--roboto);
+  font-size: 20px;
+  text-align: center;
 }
 
 .cImg {
@@ -204,32 +206,28 @@ header {
 }
 
 .cImg img {
-  vertical-align: middle;
   width: 200px;
   height: 200px;
-  max-width: 200px;
-  max-height: 200px;
-  border-radius: 100px;
+  border-radius: 50%;
 }
-
-.customerCard > p {
-  font-family: var(--roboto);
-  opacity: 0.8;
-  text-align: center;
-  line-height: 30px;
-  font-size: 20px;
-}
-
 .cName {
   font-family: var(--roboto);
   text-align: center;
+}
+
+.customerCard p {
   padding: 20px 0;
+  opacity: 0.8;
 }
 
 .cRating {
   font-size: 20px;
   text-align: center;
-  padding: 0 0 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+
   color: var(--secondaryColor);
 }
 

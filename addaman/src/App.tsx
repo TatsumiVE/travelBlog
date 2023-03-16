@@ -14,6 +14,7 @@ import DestinationCard from "./components/Card/Destination";
 import Customer2 from "./assets/customer2.jpg";
 import Customer3 from "./assets/customer3.jpg";
 import CustomerCard from "./components/Card/Customer";
+import Carousel from "react-simply-carousel";
 
 function App() {
   const cardData = [
@@ -90,24 +91,23 @@ function App() {
   ];
   const [active, setActive] = useState(1);
 
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const userData = [
     {
       image: Customer1,
       name: "Su Su",
-      feedback:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolores nobis dicta iure exercitationem veritatis.",
+      feedback: "Tempora, dolores nobis dicta iure exercitationem veritatis.",
     },
     {
       image: Customer2,
       name: "Myo Aung",
-      feedback:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolores nobis dicta iure exercitationem veritatis.",
+      feedback: " Tempora, dolores nobis dicta iure exercitationem veritatis.",
     },
     {
       image: Customer3,
       name: "Aye Aye",
-      feedback:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolores nobis dicta iure exercitationem veritatis.",
+      feedback: "Tempora, dolores nobis dicta iure exercitationem veritatis.",
     },
   ];
 
@@ -234,7 +234,7 @@ function App() {
                 <h2>Our Customer</h2>
               </div>
               <div className="customerCard">
-                {userData.map((customer, index) => {
+                {/* {userData.map((customer, index) => {
                   return (
                     <CustomerCard
                       image={customer.image}
@@ -242,7 +242,91 @@ function App() {
                       feedback={customer.feedback}
                     ></CustomerCard>
                   );
-                })}
+                })} */}
+                <Carousel
+                  containerProps={{
+                    style: {
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "space-between",
+
+                      userSelect: "none",
+                    },
+                  }}
+                  preventScrollOnSwipe
+                  swipeTreshold={60}
+                  activeSlideIndex={activeSlide}
+                  activeSlideProps={{
+                    style: {
+                      background: "blue",
+                    },
+                  }}
+                  onRequestChange={setActiveSlide}
+                  forwardBtnProps={{
+                    children: ">",
+                    style: {
+                      fontSize: "35px",
+                      fontWeight: "bold",
+                      width: 60,
+                      height: 60,
+                      minWidth: 60,
+                      alignSelf: "center",
+                      color: "#061ca9",
+                      border: "none",
+                      cursor: "pointer",
+                      background: "none",
+                    },
+                  }}
+                  backwardBtnProps={{
+                    children: "<",
+                    style: {
+                      fontSize: "35px",
+                      fontWeight: "bold",
+                      width: 60,
+                      height: 60,
+                      minWidth: 60,
+                      alignSelf: "center",
+                      color: "#061ca9",
+                      border: "none",
+                      cursor: "pointer",
+                      background: "none",
+                    },
+                  }}
+                  dotsNav={{
+                    show: true,
+                    itemBtnProps: {
+                      style: {
+                        height: 16,
+                        width: 16,
+                        borderRadius: "50%",
+                        border: 0,
+                        margin: "20px 10px",
+                      },
+                    },
+                    activeItemBtnProps: {
+                      style: {
+                        height: 16,
+                        width: 16,
+                        borderRadius: "50%",
+                        border: 0,
+                        background: "#061ca9",
+                        margin: "20px 10px",
+                      },
+                    },
+                  }}
+                  itemsToShow={1}
+                  speed={400}
+                >
+                  {userData.map((customer, index) => {
+                    return (
+                      <CustomerCard
+                        image={customer.image}
+                        name={customer.name}
+                        feedback={customer.feedback}
+                      ></CustomerCard>
+                    );
+                  })}
+                </Carousel>
               </div>
             </div>
           </div>
