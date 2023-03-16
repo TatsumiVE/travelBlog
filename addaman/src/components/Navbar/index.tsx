@@ -1,9 +1,9 @@
 const navItem = [
-  { link: "./", label: "Home" },
-  { link: "./", label: "About" },
-  { link: "./", label: "Places" },
-  { link: "./", label: "Testimonials" },
-  { link: "./", label: "Login" },
+  { link: "/", label: "Home" },
+  { link: "/#service", label: "Services" },
+  { link: "/#places", label: "Places" },
+  { link: "/#testimonials", label: "Testimonials" },
+  { link: "/login", label: "Login" },
 ];
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="inner">
         <div className="layoutHeader">
           <div className="logo">
-            <a href="./" target="_self">
+            <a href="/" target="_self">
               Travel
             </a>
           </div>
