@@ -9,381 +9,84 @@ import Destination4 from "./assets/Newzeland.png";
 import Destination5 from "./assets/Bora Bora.png";
 import Destination6 from "./assets/London.png";
 import { useState } from "react";
-import ServiceCard from "./components/Card/Services";
-import DestinationCard from "./components/Card/Destination";
+
 import Customer2 from "./assets/customer2.jpg";
 import Customer3 from "./assets/customer3.jpg";
 import CustomerCard from "./components/Card/Customer";
 import Carousel from "react-simply-carousel";
+import Navbar from "./components/Navbar";
 
+import { Routes, Route } from "react-router-dom";
+
+import Detail from "./components/Detail/detail";
+import Recommended from "./components/Recommed";
+import Service from "./components/Service";
+import MainVisual from "./components/Hero";
+import Customer from "./components/Customer";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
+import Register from "./components/Register";
+
+export const data = [
+  {
+    image: Destination1,
+    title: "Singapore",
+    desc: "Republic of Singapore, is a sovereign island country and city-state in maritime Southeast Asia. It lies about one degree of latitude (137 kilometres or 85 miles) north of the equator, off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, the Singapore Strait to the south, the South China Sea to the east, and the Straits of Johor to the north. The country's territory is composed of one main island, 63 satellite islands and islets, and one outlying islet; the combined area of these has increased by 25% since the country's independence as a result of extensive land reclamation projects. It has the third highest population density in the world. ",
+    cost: "38,800",
+    duration: "Approx 2 night trip",
+  },
+  {
+    image: Destination2,
+    title: "Thailand",
+
+    desc: "Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces, ancient ruins and ornate temples displaying figures of Buddha. In Bangkok, the capital, an ultramodern cityscape rises next to quiet canalside communities and the iconic temples of Wat Arun, Wat Pho and the Emerald Buddha Temple (Wat Phra Kaew). Nearby beach resorts include bustling Pattaya and fashionable Hua Hin. ",
+    cost: "54,200",
+    duration: "Approx 2 night trip",
+  },
+  {
+    image: Destination3,
+    title: "Paris",
+    desc: "The City of Paris is the centre of the Île-de-France region, or Paris Region, with an estimated population of 12,262,544 in 2019, or about 19% of the population of France,[8] making the region France's primate city. The Paris Region had a GDP of €739 billion ($743 billion) in 2019, the highest in Europe.[9] According to the Economist Intelligence Unit Worldwide Cost of Living Survey, in 2022, Paris was the city with the ninth-highest cost of living in the world.[10]",
+    cost: "45,500",
+    duration: "Approx 2 night trip",
+  },
+  {
+    image: Destination4,
+    title: "New Zealand",
+    desc: "The islands of New Zealand were the last large habitable land to be settled by humans. Between about 1280 and 1350, Polynesians began to settle in the islands and then developed a distinctive Māori culture. In 1642, the Dutch explorer Abel Tasman became the first European to sight and record New Zealand. In 1840, representatives of the United Kingdom and Māori chiefs signed the Treaty of Waitangi, which in its English version declared British sovereignty over the islands. In 1841, New Zealand became a colony within the British Empire. Subsequently, a series of conflicts between the colonial government and Māori tribes resulted in the alienation and confiscation of large amounts of Māori land. New Zealand became a dominion in 1907; it gained full statutory independence in 1947, retaining the monarch as head of state.",
+    cost: "24,100",
+    duration: "Approx 1 night trip",
+  },
+  {
+    image: Destination5,
+    title: "Bora Bora",
+    desc: "Bora Bora",
+    cost: "95,400",
+    duration: "Approx 2 night 2 day trip",
+  },
+  {
+    image: Destination6,
+    title: "London",
+    desc: "London is one of my attractions because of the close distance between us, I like a lot to go to it to spend a day trip with my friends, and do some recreational activities, such as cycling and passing through many of its attractions, such as Buckingham Palace, the Science Museum, or the interactive science and technology center in London, and take some souvenir photos in these wonderful areas.The north of the city: which includes the city district. Camden. Ealing. Enfield District. Barking and Dagenham. Barnett area. Brent area. Havering. London. Hackney. Hammersmith and Fulham. Harnegi. Harrow. And then Forrest. Westminster. Hounslow. Kansas and Chelsea. Newham. Redbrieg. Tower Hamlets.",
+    cost: "38,800",
+    duration: "Approx 3 night 2 day trip",
+  },
+];
 function App() {
-  const cardData = [
-    {
-      icon: "fa-solid fa-hand-holding-dollar",
-      title: "Get Best Prices",
-      para: "Pay through our application and save thousands and get amazing rewards",
-    },
-    {
-      icon: "fa-solid fa-virus-covid",
-      title: "Covid Safe",
-      para: "We have all the curated hotels that have all the precaution for a covid safe environment",
-    },
-    {
-      icon: "fa-solid fa-credit-card",
-      title: "Flexible Payments",
-      para: "Enjoy the flexible payment through our app and get rewards on every payment.",
-    },
-    {
-      icon: "fa-solid fa-street-view",
-      title: "Find Near You",
-      para: "Find the best hotels and places to visit near you in a single click.",
-    },
-  ];
-  const data = [
-    {
-      image: Destination1,
-      title: "Singapore",
-      subTitle: "Singapore, officialy thr Republic of Singapore, is a",
-      cost: "38,800",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination2,
-      title: "Thailand",
-      subTitle: "Thailand is a Southeast Asia country. It's known for",
-      cost: "54,200",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination3,
-      title: "Paris",
-      subTitle: "Paris, France's capital, is a major European city and a",
-      cost: "45,500",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination4,
-      title: "New Zealand",
-      subTitle: "New Zealand is an island country in the",
-      cost: "24,100",
-      duration: "Approx 1 night trip",
-    },
-    {
-      image: Destination5,
-      title: "Bora Bora",
-      subTitle: "Bora Bora is a small South Pacific island northwest of",
-      cost: "95,400",
-      duration: "Approx 2 night 2 day trip",
-    },
-    {
-      image: Destination6,
-      title: "London",
-      subTitle: "London, the capital of England and the United",
-      cost: "38,800",
-      duration: "Approx 3 night 2 day trip",
-    },
-  ];
-  const packages = [
-    "The Weekend Break",
-    "The Package Holiday",
-    "The Group Tour",
-    "Long Term Slow Travel",
-  ];
-  const [active, setActive] = useState(1);
-
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const userData = [
-    {
-      image: Customer1,
-      name: "Su Su",
-      feedback: "Tempora, dolores nobis dicta iure exercitationem veritatis.",
-    },
-    {
-      image: Customer2,
-      name: "Myo Aung",
-      feedback: " Tempora, dolores nobis dicta iure exercitationem veritatis.",
-    },
-    {
-      image: Customer3,
-      name: "Aye Aye",
-      feedback: "Tempora, dolores nobis dicta iure exercitationem veritatis.",
-    },
-  ];
-
-  const socialLink = [
-    { icon: "fa-brands fa-facebook" },
-    { icon: "fa-brands fa-instagram" },
-    { icon: "fa-brands fa-linkedin" },
-  ];
   return (
     <div className="App">
+      <Routes>
+        <Route path="/detail" element={<Detail></Detail>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+      </Routes>
       <div className="pjWrap">
-        <header>
-          <div className="inner">
-            <div className="layoutHeader">
-              <div className="logo">
-                <a href="./" target="_self">
-                  Travel
-                </a>
-              </div>
-              <nav>
-                <ul className="navbar">
-                  <li>
-                    <a href="./" target="_self">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./" target="_self">
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./" target="_self">
-                      Places
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./" target="_self">
-                      Testimonials
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./" target="_self">
-                      Login
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </header>
-
-        <section className="mainVisual">
-          <div className="hero">
-            <div className="bg">
-              <h1>TRAVEL TO EXPLORE</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Temporibus id, qui blanditiis veniam voluptatem reiciendis
-                maiores iusto earum porro aut, quaerat quae quod consequatur
-                corporis. Sint perspiciatis accusamus qui sed.
-              </p>
-
-              <Button className="heroBtn" label="Explore Now"></Button>
-            </div>
-          </div>
-        </section>
-
-        <section className="service">
-          <div className="inner">
-            <div className="title">
-              <h2>Our Service</h2>
-            </div>
-            <div className="cardContainer">
-              {cardData.map((card, index) => {
-                return (
-                  <ServiceCard
-                    icon={card.icon}
-                    title={card.title}
-                    para={card.para}
-                  ></ServiceCard>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section id="recommend">
-          <div className="inner">
-            <div className="title">
-              <h2>Recommended Destinations</h2>
-            </div>
-            <div className="packages">
-              <ul>
-                {packages.map((packages, index) => {
-                  return (
-                    <li
-                      className={active === index + 1 ? "active" : ""}
-                      onClick={() => setActive(index + 1)}
-                    >
-                      {packages}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div className="destinations">
-              {data.map((destination, index) => {
-                return (
-                  <DestinationCard
-                    image={destination.image}
-                    title={destination.title}
-                  ></DestinationCard>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="inner">
-            <div className="customer">
-              <div className="title">
-                <h2>Our Customer</h2>
-              </div>
-              <div className="customerCard">
-                {/* {userData.map((customer, index) => {
-                  return (
-                    <CustomerCard
-                      image={customer.image}
-                      name={customer.name}
-                      feedback={customer.feedback}
-                    ></CustomerCard>
-                  );
-                })} */}
-                <Carousel
-                  containerProps={{
-                    style: {
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "space-between",
-
-                      userSelect: "none",
-                    },
-                  }}
-                  preventScrollOnSwipe
-                  swipeTreshold={60}
-                  activeSlideIndex={activeSlide}
-                  activeSlideProps={{
-                    style: {
-                      background: "blue",
-                    },
-                  }}
-                  onRequestChange={setActiveSlide}
-                  forwardBtnProps={{
-                    children: ">",
-                    style: {
-                      fontSize: "35px",
-                      fontWeight: "bold",
-                      width: 60,
-                      height: 60,
-                      minWidth: 60,
-                      alignSelf: "center",
-                      color: "#061ca9",
-                      border: "none",
-                      cursor: "pointer",
-                      background: "none",
-                    },
-                  }}
-                  backwardBtnProps={{
-                    children: "<",
-                    style: {
-                      fontSize: "35px",
-                      fontWeight: "bold",
-                      width: 60,
-                      height: 60,
-                      minWidth: 60,
-                      alignSelf: "center",
-                      color: "#061ca9",
-                      border: "none",
-                      cursor: "pointer",
-                      background: "none",
-                    },
-                  }}
-                  dotsNav={{
-                    show: true,
-                    itemBtnProps: {
-                      style: {
-                        height: 16,
-                        width: 16,
-                        borderRadius: "50%",
-                        border: 0,
-                        margin: "20px 10px",
-                      },
-                    },
-                    activeItemBtnProps: {
-                      style: {
-                        height: 16,
-                        width: 16,
-                        borderRadius: "50%",
-                        border: 0,
-                        background: "#061ca9",
-                        margin: "20px 10px",
-                      },
-                    },
-                  }}
-                  itemsToShow={1}
-                  speed={400}
-                >
-                  {userData.map((customer, index) => {
-                    return (
-                      <CustomerCard
-                        image={customer.image}
-                        name={customer.name}
-                        feedback={customer.feedback}
-                      ></CustomerCard>
-                    );
-                  })}
-                </Carousel>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <footer>
-          <div className="fContainer">
-            <div className="social">
-              {/* <span>
-                <i className="fa-brands fa-facebook"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-instagram"></i>
-              </span>
-              <span>
-                <i className="fa-brands fa-linkedin"></i>
-              </span> */}
-              <ul>
-                <li>
-                  <a href="">aaaa</a>
-                </li>
-                <li>
-                  <a href=""> bbbb</a>
-                </li>
-                <li>
-                  <a href="">cccccc</a>
-                </li>
-              </ul>
-              {/* {socialLink.map(()=>{return (<></>)})} */}
-            </div>
-            <div className="fList">
-              <span>
-                <a href="#" target="_self">
-                  Home
-                </a>
-              </span>
-              <span>
-                <a href="#" target="_self">
-                  About
-                </a>
-              </span>
-              <span>
-                <a href="#" target="_self">
-                  Places
-                </a>
-              </span>
-              <span>
-                <a href="#" target="_self">
-                  Testimonials
-                </a>
-              </span>
-            </div>
-            <address>
-              Copyright &copy; 2021 Travelo. All rights reserved.
-            </address>
-          </div>
-        </footer>
+        <Navbar></Navbar>
+        <MainVisual></MainVisual>
+        <Service></Service>
+        <Recommended></Recommended>
+        <Customer></Customer>
+        <Footer></Footer>
       </div>
     </div>
   );

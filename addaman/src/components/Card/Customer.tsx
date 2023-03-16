@@ -7,7 +7,7 @@ type Props = {
 };
 const CustomerCard: React.FC<Props> = ({ image, name, feedback }) => {
   return (
-    <div>
+    <div className="customerWrap">
       <div className="cImg">
         <img src={image} alt={name} />
       </div>
