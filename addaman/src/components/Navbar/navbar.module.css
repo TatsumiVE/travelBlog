@@ -30,7 +30,7 @@ header {
 }
 
 .navbar {
-  margin-right: 90px;
+  width: 1100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,4 +54,15 @@ header {
 
 .navbar > li > a:hover {
   border-bottom: 2px solid var(--primaryColor);
+}
+
+.login{
+  line-height: 60px;
+}
+
+.login > a > i{
+  float: right;
+  font-size: 30px;
+  color: var(--primaryColor);
+  
 }

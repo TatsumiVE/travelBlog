@@ -4,7 +4,6 @@ const navItem = [
   { link: "/#service", label: "Services" },
   { link: "/#places", label: "Places" },
   { link: "/#testimonials", label: "Testimonials" },
-  { link: "/login", label: "Login" },
 ];
 
 const Navbar = () => {
@@ -32,6 +31,11 @@ const Navbar = () => {
               })}
             </ul>
           </nav>
+          <div className={styled.login}>
+            <a href="/login">
+              <i className="fa-solid fa-circle-user"></i>
+            </a>
+          </div>
         </div>
       </div>
     </header>
