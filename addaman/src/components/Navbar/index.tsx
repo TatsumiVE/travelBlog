@@ -1,3 +1,4 @@
+import styled from "./navbar.module.css";
 const navItem = [
   { link: "/", label: "Home" },
   { link: "/#service", label: "Services" },
@@ -10,14 +11,16 @@ const Navbar = () => {
   return (
     <header>
       <div className="inner">
-        <div className="layoutHeader">
-          <div className="logo">
+
+        <div className={styled.layoutHeader}>
+          <div className={styled.logo}>
+
             <a href="/" target="_self">
               Travel
             </a>
           </div>
           <nav>
-            <ul className="navbar">
+            <ul className={styled.navbar}>
               {navItem.map((item, index) => {
                 return (
                   <li key={index}>

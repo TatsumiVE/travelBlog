@@ -1,6 +1,8 @@
+import styled from "./login.module.css";
+
 const Login = () => {
   return (
-    <div className="loginContainer">
+    <div className={styled.loginContainer}>
       <div className="loginBg">
         <div className="titleBox">
           <div className="titleLogin">
@@ -13,9 +15,9 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="loginForm">
-        <div className="login">
-          <div className="text">
+      <div className={styled.loginForm}>
+        <div className={styled.login}>
+          <div className={styled.text}>
             <h1>
               Hello{" "}
               <span>
@@ -24,24 +26,26 @@ const Login = () => {
             </h1>
             <p>Enter the information you entered while registering</p>
           </div>
-          <form className="form">
-            <div className="emailGroup">
+          <form>
+            <div className={styled.emailGroup}>
               <label>Email</label>
               <input type="email" name="" id="" />
             </div>
 
-            <div className="passwordGroup">
+            <div className={styled.passwordGroup}>
               <label>Password</label>
               <input type="password" name="" id="" />
             </div>
 
-            <div className="button">
+            <div className={styled.button}>
               <a href="/" target="_blank">
                 Login
               </a>
             </div>
 
-            <div className="button">
+            <div className={styled.button}>
+
+
               <a href="/register" target="_blank">
                 Register
               </a>
