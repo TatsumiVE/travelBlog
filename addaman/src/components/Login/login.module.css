@@ -1,0 +1,80 @@
+.loginContainer {
+  width: 100%;
+  font-family: var(--roboto);
+  display: flex;
+  height: 100vh;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.text > h1 {
+  font-size: 28px;
+}
+
+.text > p {
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+span i {
+  color: var(--secondaryColor);
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.loginForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 98%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: 1px 2px 5px gray;
+  outline: 0;
+}
+
+.emailGroup,
+.passwordGroup {
+  margin-bottom: 20px;
+}
+
+.button > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  margin-top: 35px;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  background: linear-gradient(
+    to right,
+    rgba(93, 166, 251, 255) 0,
+    rgba(97, 100, 250, 255) 45%,
+    rgba(136, 124, 253, 255) 100%
+  );
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px gray;
+}

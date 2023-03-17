@@ -1,0 +1,26 @@
+.packages {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+.packages > ul {
+  display: flex;
+  list-style-type: none;
+  width: max-content;
+}
+.packages > ul li {
+  font-family: var(--poppin);
+  padding: 1rem 2rem;
+  border-bottom: 0.1rem solid var(--textColor);
+}
+.packages > ul > li:hover {
+  border-bottom: 5px solid var(--primaryColor);
+}
+
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+
+  font-family: var(--roboto);
+}
