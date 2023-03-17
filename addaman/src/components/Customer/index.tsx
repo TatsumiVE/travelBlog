@@ -4,6 +4,7 @@ import Customer2 from "../../assets/customer2.jpg";
 import Customer3 from "../../assets/customer3.jpg";
 import CustomerCard from "../Card/Customer";
 import { useState } from "react";
+import "../../App.css";
 
 export const userData = [
   {
@@ -26,7 +27,7 @@ export const userData = [
 const Customer = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   return (
-    <section>
+    <section id="testimonials">
       <div className="inner">
         <div className="customer">
           <div className="title">
@@ -90,7 +91,9 @@ const Customer = () => {
                     width: 16,
                     borderRadius: "50%",
                     border: 0,
+                    background: "#777",
                     margin: "20px 10px",
+                    cursor: "pointer",
                   },
                 },
                 activeItemBtnProps: {

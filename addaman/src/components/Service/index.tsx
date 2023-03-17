@@ -1,4 +1,5 @@
 import ServiceCard from "../Card/Services";
+import styled from "./service.module.css";
 
 export const cardData = [
   {
@@ -25,12 +26,12 @@ export const cardData = [
 
 const Service = () => {
   return (
-    <section className="service">
+    <section className={styled.service} id="service">
       <div className="inner">
         <div className="title">
           <h2>Our Service</h2>
         </div>
-        <div className="cardContainer">
+        <div className={styled.cardContainer}>
           {cardData.map((card, index) => {
             return (
               <ServiceCard

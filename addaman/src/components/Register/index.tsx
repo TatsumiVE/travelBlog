@@ -1,6 +1,7 @@
+import styled from "./register.module.css";
 const Register = () => {
   return (
-    <div className="registerContainer">
+    <div className={styled.registerContainer}>
       <div className="loginBg">
         <div className="titleBox">
           <div className="titleLogin">
@@ -12,9 +13,9 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <div className="registerForm">
-        <div className="register">
-          <div className="registerText">
+      <div className={styled.registerForm}>
+        <div className={styled.register}>
+          <div className={styled.registerText}>
             <h1>
               Welcome{" "}
               <span>
@@ -22,33 +23,33 @@ const Register = () => {
               </span>
             </h1>
           </div>
-          <form className="rForm">
+          <form>
             <div className="firstGroup">
               <label>First Name</label>
               <input type="text" name="firstName" id="" />
             </div>
 
-            <div className="lastGroup">
+            <div className={styled.lastGroup}>
               <label>Last Name</label>
               <input type="text" name="lastName" id="" />
             </div>
 
-            <div className="emailGroup">
+            <div className={styled.emailGroup}>
               <label>Email</label>
               <input type="email" name="email" id="" />
             </div>
 
-            <div className="passwordGroup">
+            <div className={styled.passwordGroup}>
               <label>Password</label>
               <input type="password" name="password" id="" />
             </div>
 
-            <div className="confirmGroup">
+            <div className={styled.confirmGroup}>
               <label>Confirm Password</label>
               <input type="password" name="password" id="" />
             </div>
 
-            <div className="registerBtn">
+            <div className={styled.registerBtn}>
               <a href="/" target="_blank">
                 Register
               </a>

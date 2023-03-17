@@ -1,23 +1,25 @@
+import styled from "./navbar.module.css";
 const navItem = [
-  { link: "./", label: "Home" },
-  { link: "./", label: "About" },
-  { link: "./", label: "Places" },
-  { link: "./", label: "Testimonials" },
-  { link: "./", label: "Login" },
+  { link: "/", label: "Home" },
+  { link: "/#service", label: "Services" },
+  { link: "/#places", label: "Places" },
+  { link: "/#testimonials", label: "Testimonials" },
+
+  { link: "/login", label: "Login" },
 ];
 
 const Navbar = () => {
   return (
     <header>
       <div className="inner">
-        <div className="layoutHeader">
-          <div className="logo">
-            <a href="./" target="_self">
+        <div className={styled.layoutHeader}>
+          <div className={styled.logo}>
+            <a href="/" target="_self">
               Travel
             </a>
           </div>
           <nav>
-            <ul className="navbar">
+            <ul className={styled.navbar}>
               {navItem.map((item, index) => {
                 return (
                   <li key={index}>

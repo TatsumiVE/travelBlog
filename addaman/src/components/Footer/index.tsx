@@ -1,6 +1,7 @@
 import React from "react";
 import SocialLink from "./SocialLink";
-import FList from "./FList";
+import FList from "./FooterList";
+import styled from "./main.module.css";
 
 const socialLink = [
   { icon: "fa-brands fa-facebook" },
@@ -18,15 +19,15 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="fContainer">
-          <div className="socialLink">
+        <div className={styled.fContainer}>
+          <div className={styled.socialLink}>
             <ul>
               {socialLink.map((social) => {
                 return <SocialLink icon={social.icon} />;
               })}
             </ul>
           </div>
-          <div className="fList">
+          <div className={styled.fList}>
             <ul>
               {fList.map((fList) => {
                 return <FList listName={fList.list} />;

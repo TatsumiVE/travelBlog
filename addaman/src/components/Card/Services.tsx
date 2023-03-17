@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "./main.module.css";
 
 type Props = {
   icon: string;
@@ -7,11 +8,11 @@ type Props = {
 };
 const ServiceCard: React.FC<Props> = ({ icon, title, para }) => {
   return (
-    <div className="card">
-      <div className="serviceIcon">
+    <div className={styled.card}>
+      <div className={styled.serviceIcon}>
         <i className={icon}></i>
       </div>
-      <div className="serviceTxt">
+      <div className={styled.serviceTxt}>
         <h3>{title}</h3>
         <p>{para}</p>
       </div>

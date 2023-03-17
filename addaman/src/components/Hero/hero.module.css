@@ -1,0 +1,56 @@
+.hero {
+  width: 100%;
+  height: 600px;
+  font-family: var(--roboto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../../assets/hero.png");
+  background-size: cover;
+  background-position: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bg > h1 {
+  color: var(--defaultColor);
+  font-size: 52px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.bg > p {
+  color: var(--defaultColor);
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.heroBtn {
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 10px;
+  background: var(--primaryColor);
+}
+
+.heroBtn a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: var(--defaultColor);
+  text-transform: uppercase;
+  text-decoration: none;
+}

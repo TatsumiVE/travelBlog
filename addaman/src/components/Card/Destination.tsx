@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import styled from "./main.module.css";
 
 type Props = {
   image: string;
@@ -7,14 +8,14 @@ type Props = {
 };
 const DestinationCard: React.FC<Props> = ({ image, title }) => {
   return (
-    <div className="destinationCard">
-      <div className="destinationImage">
+    <div className={styled.destinationCard}>
+      <div className={styled.destinationImage}>
         <img src={image} alt={title} />
       </div>
-      <div className="destinationTitle">
+      <div className={styled.destinationTitle}>
         <h3>{title}</h3>
 
-        <Button className="detailBtn" label="Detail"></Button>
+        <Button className={styled.detailBtn} label="Detail"></Button>
       </div>
     </div>
   );

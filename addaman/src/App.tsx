@@ -1,31 +1,20 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Button";
-import Customer1 from "./assets/customer.jpg";
+
 import Destination1 from "./assets/Singapore.png";
 import Destination2 from "./assets/Thailand.png";
 import Destination3 from "./assets/Paris.png";
 import Destination4 from "./assets/Newzeland.png";
 import Destination5 from "./assets/Bora Bora.png";
 import Destination6 from "./assets/London.png";
-import { useState } from "react";
-
-import Customer2 from "./assets/customer2.jpg";
-import Customer3 from "./assets/customer3.jpg";
-import CustomerCard from "./components/Card/Customer";
-import Carousel from "react-simply-carousel";
-import Navbar from "./components/Navbar";
 
 import { Routes, Route } from "react-router-dom";
 
 import Detail from "./components/Detail/detail";
-import Recommended from "./components/Recommed";
-import Service from "./components/Service";
-import MainVisual from "./components/Hero";
-import Customer from "./components/Customer";
-import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
+
+import Home from "./Home";
 
 export const data = [
   {
@@ -74,21 +63,12 @@ export const data = [
 ];
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/detail" element={<Detail></Detail>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-      </Routes>
-      <div className="pjWrap">
-        <Navbar></Navbar>
-        <MainVisual></MainVisual>
-        <Service></Service>
-        <Recommended></Recommended>
-        <Customer></Customer>
-        <Footer></Footer>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home></Home>}></Route>
+      <Route path="/detail:id" element={<Detail></Detail>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
+      <Route path="/register" element={<Register></Register>}></Route>
+    </Routes>
   );
 }
 

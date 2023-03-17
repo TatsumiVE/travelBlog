@@ -1,5 +1,6 @@
 import Button from "../Button";
 import "../../App.css";
+import styled from "./detail.module.css";
 import Destination1 from "../../assets/Singapore.png";
 import Destination2 from "../../assets/Thailand.png";
 import Destination3 from "../../assets/Paris.png";
@@ -12,31 +13,28 @@ import { data } from "../../App";
 const Detail = () => {
   return (
     <section className="detail">
-      <div className="detailWrapper">
-        <div className="detailDesc">
-          <div className="detailTitle">
-            <div className="backBtn">
-              <a href="./home">
+      <div className={styled.detailWrapper}>
+        <div className={styled.detailDesc}>
+          <div className={styled.detailTitle}>
+            <div className={styled.backBtn}>
+              <a href="/">
                 <i className="fa-solid fa-left-long"></i>
               </a>
             </div>
             <h2>Travel & Tourism</h2>
           </div>
 
-          <div className="content">
+          <div className={styled.content}>
             <h3>{data[0].title}</h3>
-
             <span>Trip Price - {data[0].cost}</span>
-
-            <div className="body">
+            <div className={styled.body}>
               <p>{data[0].desc}</p>
             </div>
-
             <Button className="detailBtn" label="Visit"></Button>
           </div>
         </div>
 
-        <div className="detailImage">
+        <div className={styled.detailImage}>
           <img src={Destination1} alt="{data[0].title}" />
         </div>
       </div>

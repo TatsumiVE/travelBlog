@@ -1,0 +1,10 @@
+.service {
+  width: 100%;
+  font-family: var(--roboto);
+}
+
+.cardContainer {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+}
