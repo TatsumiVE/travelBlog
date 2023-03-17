@@ -27,6 +27,7 @@ export const cardData = [
 const Service = () => {
   return (
     <section className={styled.service} id="service">
+
       <div className="inner">
         <div className="title">
           <h2>Our Service</h2>

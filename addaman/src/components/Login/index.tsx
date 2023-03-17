@@ -44,6 +44,8 @@ const Login = () => {
             </div>
 
             <div className={styled.button}>
+
+
               <a href="/register" target="_blank">
                 Register
               </a>

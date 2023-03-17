@@ -4,7 +4,6 @@ const navItem = [
   { link: "/#service", label: "Services" },
   { link: "/#places", label: "Places" },
   { link: "/#testimonials", label: "Testimonials" },
-
   { link: "/login", label: "Login" },
 ];
 
@@ -12,8 +11,10 @@ const Navbar = () => {
   return (
     <header>
       <div className="inner">
+
         <div className={styled.layoutHeader}>
           <div className={styled.logo}>
+
             <a href="/" target="_self">
               Travel
             </a>
