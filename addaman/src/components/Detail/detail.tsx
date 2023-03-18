@@ -2,13 +2,7 @@ import Button from "../Button";
 import "../../App.css";
 import styled from "./detail.module.css";
 import Destination1 from "../../assets/Singapore.png";
-import Destination2 from "../../assets/Thailand.png";
-import Destination3 from "../../assets/Paris.png";
-import Destination4 from "../../assets/Newzeland.png";
-import Destination5 from "../../assets/Bora Bora.png";
-import Destination6 from "../../assets/London.png";
-
-import { data } from "../../App";
+import { data } from "../../DestinationData";
 
 const Detail = () => {
   return (
