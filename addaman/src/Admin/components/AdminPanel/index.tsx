@@ -67,11 +67,11 @@ const AdminPanel = () => {
     setData([
       ...data,
       {
-        image: "he;llo",
-        title: "he;llo",
-        desc: "he;llo",
-        cost: "he;llo",
-        duration: "he;llo",
+        image: "hello",
+        title: "hello",
+        desc: "hello",
+        cost: "hello",
+        duration: "hello",
       },
     ]);
   };

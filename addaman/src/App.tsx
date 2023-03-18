@@ -16,7 +16,7 @@ import Destination6 from "../assets/London.png";
 
 import AdminPage from "./Admin/AdminPage";
 
-import Home from "./Home";
+import Home from "./Pages";
 import Page from "./Admin/AdminPage";
 
 function App() {

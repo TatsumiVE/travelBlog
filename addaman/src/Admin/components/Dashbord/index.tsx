@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "./style.module.css";
 // import Destination from "../../../assets/Singapore.png";
 
@@ -13,6 +13,7 @@ type datas = {
   cost: string;
   duration: string;
 };
+
 const Dashboard: React.FC<Props> = ({ data }) => {
   const [tasks, setTasks] = useState<any>(data);
 
@@ -61,5 +62,4 @@ const Dashboard: React.FC<Props> = ({ data }) => {
     </>
   );
 };
-
 export default Dashboard;
