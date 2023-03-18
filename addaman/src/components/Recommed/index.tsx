@@ -4,7 +4,7 @@ import styled from "./recommend.module.css";
 
 import DestinationCard from "../Card/Destination";
 
-import { data } from "../../App";
+import { data } from "../../DestinationData";
 
 const packages = [
   "The Weekend Break",

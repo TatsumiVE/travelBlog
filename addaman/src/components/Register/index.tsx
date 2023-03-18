@@ -24,7 +24,7 @@ const Register = () => {
             </h1>
           </div>
           <form>
-            <div className="firstGroup">
+            <div className={styled.firstGroup}>
               <label>First Name</label>
               <input type="text" name="firstName" id="" />
             </div>

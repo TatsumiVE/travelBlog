@@ -27,6 +27,17 @@ span i {
   margin: 0 auto;
 }
 
+form input {
+  width: 98%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: 1px 2px 5px gray;
+  outline: 0;
+}
+
 .registerForm {
   width: 50%;
   display: flex;
