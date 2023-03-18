@@ -1,0 +1,59 @@
+.iname {
+  color: #444a53;
+  padding: 10px 30px 0 30px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.board {
+  width: 94%;
+  margin: 30px 0 30px 30px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.board h5 {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr td {
+  border-bottom: 1px solid #d7dbe6;
+  padding: 10px;
+}
+
+thead th {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: #f9fafb;
+  padding: 15px;
+}
+
+td img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+tbody tr:hover {
+  background: aliceblue;
+}
+
+.delete {
+  font-size: 14px;
+  color: #cc0000;
+  padding-right: 20px;
+}
+
+.edit {
+  font-size: 14px;
+  color: #0000cc;
+}
