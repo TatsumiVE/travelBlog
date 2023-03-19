@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import styled from "./style.module.css";
+import { Link } from "react-router-dom";
+import styled from "./Style.module.css";
 // import Destination from "../../../assets/Singapore.png";
 
 type Props = {
-  data: datas;
+  data: datas[];
+  handledUpdate: any;
+  handledDelete: any;
 };
 
 type datas = {
@@ -14,9 +17,7 @@ type datas = {
   duration: string;
 };
 
-const Dashboard: React.FC<Props> = ({ data }) => {
-  const [tasks, setTasks] = useState<any>(data);
-
+const Dashboard: React.FC<Props> = ({ data, handledUpdate, handledDelete }) => {
   return (
     <>
       <div className={styled.boardContent}>
@@ -36,7 +37,7 @@ const Dashboard: React.FC<Props> = ({ data }) => {
               </tr>
             </thead>
             <tbody>
-              {tasks.map((item: any, index: number) => {
+              {data.map((item: any, index: number) => {
                 return (
                   <tr key={index}>
                     <td>{index + 1}</td>
@@ -46,10 +47,20 @@ const Dashboard: React.FC<Props> = ({ data }) => {
                     <td>{item.title}</td>
                     <td>{item.desc}</td>
                     <td>{item.cost}</td>
-                    <td className={styled.edit}>
+                    <td
+                      className={styled.edit}
+                      onClick={() => {
+                        handledUpdate(item);
+                      }}
+                    >
                       <i className="fa-solid fa-pen-to-square"></i>
                     </td>
-                    <td className={styled.delete}>
+                    <td
+                      className={styled.delete}
+                      onClick={() => {
+                        handledDelete(item.title);
+                      }}
+                    >
                       <i className="fa-regular fa-trash-can" id="delete"></i>
                     </td>
                   </tr>
