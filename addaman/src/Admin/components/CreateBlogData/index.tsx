@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import styled from "./style.module.css";
 import Desination from "../../../assets/Singapore.png";
+
 type Props = {
   add: any;
 };
 
 const Create: React.FC<Props> = ({ add }) => {
+  const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [price, setPrice] = useState("");
   const [duration, setDuration] = useState("");
 
-  const handleAdd = () => {
-    return add(title, desc, price, duration);
+  const handleAdd = (e: any) => {
+    e.preventDefault();
+    console.log(image);
+    add(image, title, desc, price, duration);
+    setImage("");
+    setTitle("");
+    setDesc("");
+    setPrice("");
+    setDuration("");
   };
   return (
     <>
@@ -21,10 +30,21 @@ const Create: React.FC<Props> = ({ add }) => {
       </div>
 
       <div className={styled.create}>
-        <form>
+        <form action="" method="get" encType="multipart/form-data">
           <div className={styled.imageGroup}>
             <label>Image</label>
-            <input type="file" />
+            <input
+              type="file"
+              name="avatar"
+              accept="image/*"
+              onChange={(e) => {
+                if (!e.target.files) return;
+                const file = e.target.files[0];
+                const src = URL.createObjectURL(file);
+                setImage(src);
+                console.log(file, src);
+              }}
+            />
           </div>
 
           <div className={styled.titleGroup}>
@@ -71,6 +91,7 @@ const Create: React.FC<Props> = ({ add }) => {
           <div className={styled.postBtn} onClick={handleAdd}>
             <a href="/footer">Post</a>
           </div>
+          {/* <button onClick={handleAdd}>Add</button> */}
         </form>
       </div>
     </>
