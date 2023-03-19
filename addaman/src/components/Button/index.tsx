@@ -12,7 +12,7 @@ type Props = {
 const Button: React.FC<Props> = ({ className, label }) => {
   return (
     <div className={className}>
-      <Link to="/detail:id"> {label}</Link>
+      <Link to="/detail"> {label}</Link>
     </div>
   );
 };

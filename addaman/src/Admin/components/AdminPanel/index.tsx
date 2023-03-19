@@ -1,6 +1,7 @@
-import Create from "../Create";
+import CreateData from "../CreateBlogData";
 import Dashboard from "../Dashbord";
 import Feedback from "../Feedback";
+import UpdateData from "../UpdateBlogData";
 import styled from "./style.module.css";
 import React, { useState } from "react";
 
@@ -13,8 +14,6 @@ import Destination3 from "../../../assets/Paris.png";
 import Destination4 from "../../../assets/Newzeland.png";
 import Destination5 from "../../../assets/Bora Bora.png";
 import Destination6 from "../../../assets/London.png";
-
-// import { data } from "../../../DestinationData";
 
 const AdminPanel = () => {
   const [data, setData] = useState<any>([
@@ -63,17 +62,35 @@ const AdminPanel = () => {
     },
   ]);
 
-  const add = (newData: any) => {
+  const Add = (image: any, title: any, desc: any, cost: any, duration: any) => {
     setData([
       ...data,
       {
-        image: "hello",
-        title: "hello",
-        desc: "hello",
-        cost: "hello",
-        duration: "hello",
+        image: image,
+        title: title,
+        desc: desc,
+        cost: cost,
+        duration: duration,
       },
     ]);
+  };
+  const Update = (newData: any) => {
+    const UpdateTask = data.map((data: any) => {
+      if (newData.name === data.name) {
+        return newData;
+      } else {
+        return data;
+      }
+    });
+    setData(UpdateTask);
+  };
+
+  const Delete = (name: string) => {
+    const deleteTask = data.filter((data: any) => {
+      console.log(name, data.title);
+      return name !== data.title;
+    });
+    setData(deleteTask);
   };
 
   return (
@@ -95,8 +112,13 @@ const AdminPanel = () => {
             </div>
           </div>
 
-          <Dashboard data={data} />
-          <Create add={add} />
+          <Dashboard
+            data={data}
+            handledUpdate={Update}
+            handledDelete={Delete}
+          />
+          <UpdateData update={Update} />
+          <CreateData add={Add} />
           <Feedback />
         </section>
       </div>
