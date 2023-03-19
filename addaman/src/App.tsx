@@ -7,7 +7,6 @@ import Detail from "./components/Detail/detail";
 import Login from "./components/Login";
 import Register from "./components/Register";
 
-import AdminPage from "./Admin/AdminPage";
 
 import Home from "./Pages";
 
@@ -20,7 +19,6 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
-      <AdminPage />
     </>
   );
 }

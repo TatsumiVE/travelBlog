@@ -4,6 +4,7 @@ import Feedback from "../Feedback";
 import UpdateData from "../UpdateBlogData";
 import styled from "./style.module.css";
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
 
 import Destination from "../../../assets/Singapore.png";
 import SideBar from "../Sidebar";
@@ -14,6 +15,8 @@ import Destination3 from "../../../assets/Paris.png";
 import Destination4 from "../../../assets/Newzeland.png";
 import Destination5 from "../../../assets/Bora Bora.png";
 import Destination6 from "../../../assets/London.png";
+import { timeLog } from "console";
+import { Routes } from "react-router-dom";
 
 const AdminPanel = () => {
   const [data, setData] = useState<any>([
@@ -74,16 +77,20 @@ const AdminPanel = () => {
       },
     ]);
   };
-  const Update = (newData: any) => {
-    const UpdateTask = data.map((data: any) => {
-      if (newData.name === data.name) {
-        return newData;
-      } else {
-        return data;
-      }
-    });
-    setData(UpdateTask);
-  };
+  // const Update = (newData: any) => {
+  //   const UpdateTask = data.map((data: any) => {
+  //     if (newData.name === data.name) {
+  //       return newData;
+  //     } else {
+  //       return data;
+  //     }
+  //   });
+  //   setData(UpdateTask);
+  let updateData = "";
+  const sendData = (title: string) => {
+    updateData=title;
+    // console.log(updateData);
+  }
 
   const Delete = (name: string) => {
     const deleteTask = data.filter((data: any) => {
@@ -112,14 +119,19 @@ const AdminPanel = () => {
             </div>
           </div>
 
-          <Dashboard
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard
             data={data}
-            handledUpdate={Update}
+            sendData={sendData}
             handledDelete={Delete}
-          />
-          <UpdateData update={Update} />
-          <CreateData add={Add} />
-          <Feedback />
+           />}></Route>
+
+            <Route path="/create" element={<CreateData add={Add} />}></Route>
+            <Route path="/update" element={<UpdateData sendItem={updateData}></UpdateData>}></Route>
+            <Route path="/feedback" element={<Feedback/>}></Route>
+
+          </Routes>
+
         </section>
       </div>
     </>

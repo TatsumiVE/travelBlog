@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "./style.module.css";
 
 const Stidebar = () => {
@@ -13,15 +14,15 @@ const Stidebar = () => {
           <div className={styled.items}>
             <li>
               <i className="fa-solid fa-chart-line"></i>
-              <a href="/">Dashboard</a>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
             <li>
               <i className="fa-solid fa-circle-plus"></i>
-              <a href="/">Create</a>
+              <Link to="/create">Create</Link>
             </li>
             <li>
               <i className="fa-solid fa-comment"></i>
-              <a href="/">Feedback</a>
+              <Link to="/feedback">Feedback</Link>
             </li>
           </div>
         </div>
