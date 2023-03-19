@@ -1,4 +1,32 @@
-import { useState } from "react";
+// import React, { createContext, useState } from "react";
+
+// export const CrudContext = createContext(null);
+
+// const CrudContextProvider = ({ children }) => {
+//   const [data, setData] = useState([]);
+
+//   const addData = (newData) => {
+//     setData([...data, newData]);
+//   };
+
+//   const deleteData = (id) => {
+//     setData(data.filter((item) => item.id !== id));
+//   };
+
+//   const updateData = (updatedData) => {
+//     setData(
+//       data.map((item) => (item.id === updatedData.id ? updatedData : item))
+//     );
+//   };
+
+//   return (
+//     <CrudContext.Provider value={{ data, addData, deleteData, updateData }}>
+//       {children}
+//     </CrudContext.Provider>
+//   );
+// };
+
+// export default CrudContextProvider;
 
 import Destination1 from "../assets/Singapore.png";
 import Destination2 from "../assets/Thailand.png";
