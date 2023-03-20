@@ -15,7 +15,7 @@ function App() {
     <CrudContextProvider>
       <Routes>
         {/* Client Router */}
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/detail" element={<Detail></Detail>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
