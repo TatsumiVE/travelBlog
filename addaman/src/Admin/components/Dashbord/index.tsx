@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "./style.module.css";
 // import Destination from "../../../assets/Singapore.png";
@@ -18,7 +18,7 @@ type datas = {
 };
 
 const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
-  
+  console.log(data);
   return (
     <>
       <div className={styled.boardContent}>
@@ -48,13 +48,15 @@ const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
                     <td>{item.title}</td>
                     <td>{item.desc}</td>
                     <td>{item.cost}</td>
-                    <td><Link to="/update" className={styled.edit} onClick={() => {
-                        sendData(item.title);
-                      }}>
+                    <td className={styled.edit}>
+                      <Link
+                        to="/update"
+                        onClick={() => {
+                          sendData({ ...item, index });
+                        }}
+                      >
                         <i className="fa-solid fa-pen-to-square"></i>
                       </Link>
-                      
-                      
                     </td>
                     <td
                       className={styled.delete}

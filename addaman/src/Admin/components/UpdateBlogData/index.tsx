@@ -1,32 +1,33 @@
 import React, { useState } from "react";
 import styled from "./Style.module.css";
+import { Link } from "react-router-dom";
 
 type Props = {
-  // update: any;
-  sendItem: string;
-
+  sendItem: any;
+  handledUpdate: any;
 };
 
-const UpdateData: React.FC<Props> = ({ sendItem  }) => {
-  const [image, setImage] = useState("");
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [price, setPrice] = useState("");
-  const [duration, setDuration] = useState("");
+const UpdateData: React.FC<Props> = ({ sendItem, handledUpdate }) => {
+  const index = sendItem.index;
+  const [image, setImage] = useState(sendItem.image);
+  const [title, setTitle] = useState(sendItem.title);
+  const [desc, setDesc] = useState(sendItem.desc);
+  const [cost, setCost] = useState(sendItem.cost);
+  const [duration, setDuration] = useState(sendItem.duration);
 
   // const [item, setItem] = useState(sendItem);
 
-  
-  // const handleUpdate = (e: any) => {
-  //   e.preventDefault();
-  //   update(image, title, desc, price, duration);
-  //   setImage("");
-  //   setTitle("");
-  //   setDesc("");
-  //   setPrice("");
-  //   setDuration("");
-  // };
-  console.log(sendItem ,"hello");
+  const handledClick = (e: any) => {
+    e.preventDefault();
+    console.log(index, image, title, desc, cost, duration);
+    handledUpdate({ index, image, title, desc, cost, duration });
+    setImage("");
+    setTitle("");
+    setDesc("");
+    setCost("");
+    setDuration("");
+  };
+
   return (
     <>
       <div className={styled.createContent}>
@@ -54,7 +55,7 @@ const UpdateData: React.FC<Props> = ({ sendItem  }) => {
           <div className={styled.titleGroup}>
             <label>Title</label>
             <input
-              // value={sendItem.title ? sendItem.title : ""}
+              value={title}
               type="text"
               placeholder="Enter title of the new post"
               onChange={(e) => setTitle(e.target.value)}
@@ -66,6 +67,9 @@ const UpdateData: React.FC<Props> = ({ sendItem  }) => {
             <textarea
               name="detail"
               id=""
+              value={desc}
+              rows={10}
+              cols={5}
               placeholder="Enter detail description of your post"
               onChange={(e) => setDesc(e.target.value)}
             ></textarea>
@@ -74,25 +78,25 @@ const UpdateData: React.FC<Props> = ({ sendItem  }) => {
           <div className={styled.priceGroup}>
             <label>Price</label>
             <input
-              // value={sendItem.cost? sendItem.cost : ""}
+              value={cost}
               type="text"
               placeholder="Enter price of the new post"
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setCost(e.target.value)}
             />
           </div>
 
           <div className={styled.titleGroup}>
             <label>Duration</label>
             <input
-              // value={sendItem.duration? sendItem.duration : ""}
+              value={duration}
               type="text"
               placeholder="Enter duration of the new post"
               onChange={(e) => setDuration(e.target.value)}
             />
           </div>
 
-          <div className={styled.postBtn}>
-            <a href="/footer">Update</a>
+          <div className={styled.postBtn} onClick={handledClick}>
+            <Link to="/dashboard">Update</Link>
           </div>
         </form>
       </div>

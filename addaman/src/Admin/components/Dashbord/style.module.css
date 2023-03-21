@@ -44,16 +44,16 @@ td img {
 }
 
 tbody tr:hover {
-  background: var(--cardColor);
+  background: var(--textColor);
 }
 
-.delete {
+.delete i{
   font-size: 14px;
   color: var(--deleteColor);
   padding-right: 20px;
 }
 
-.edit {
+.edit i{
   font-size: 14px;
-  color: var(--primaryColor)
+  color: var(--primaryColor);
 }

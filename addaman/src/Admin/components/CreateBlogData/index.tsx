@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "./style.module.css";
-import Desination from "../../../assets/Singapore.png";
+import { Link } from "react-router-dom";
 
 type Props = {
   add: any;
@@ -88,8 +88,8 @@ const Create: React.FC<Props> = ({ add }) => {
             />
           </div>
 
-          <div className={styled.postBtn} onClick={handleAdd}>
-            <a href="/footer">Post</a>
+          <div className={styled.postBtn} >
+            <Link to="/dashboard" onClick={handleAdd}>Post</Link>
           </div>
           {/* <button onClick={handleAdd}>Add</button> */}
         </form>
