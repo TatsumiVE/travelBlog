@@ -88,8 +88,10 @@ const Create: React.FC<Props> = ({ add }) => {
             />
           </div>
 
-          <div className={styled.postBtn} onClick={handleAdd}>
-            <Link to="/dashboard">Post</Link>
+          <div className={styled.postBtn}>
+            <Link to="/dashboard" onClick={handleAdd}>
+              Post
+            </Link>
           </div>
           {/* <button onClick={handleAdd}>Add</button> */}
         </form>

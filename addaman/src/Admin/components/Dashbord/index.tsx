@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "./Style.module.css";
 // import Destination from "../../../assets/Singapore.png";

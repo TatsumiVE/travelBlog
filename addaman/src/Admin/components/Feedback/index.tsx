@@ -10,11 +10,11 @@ const Feedback = () => {
         <table>
           <thead>
             <tr>
-              <td>Image</td>
-              <td>Customer Name</td>
-              <td>Email</td>
-              <td>Message</td>
-              <td></td>
+              <th>Image</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
