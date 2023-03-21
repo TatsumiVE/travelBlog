@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 import Destination1 from "../assets/Singapore.png";
 import Destination2 from "../assets/Thailand.png";

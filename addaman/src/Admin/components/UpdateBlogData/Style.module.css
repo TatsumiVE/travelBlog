@@ -9,10 +9,11 @@
 }
 
 .iname {
-  color: #444a53;
+  color: var(--textColor);
   padding: 10px 30px 0 30px;
   font-size: 24px;
   font-weight: 700;
+  
 }
 
 .create form {
@@ -39,28 +40,28 @@ form input {
   border-radius: 5px;
   outline: 0;
   border-color: transparent;
-  box-shadow: 1px 2px 5px gray;
+  box-shadow: 1px 2px 5px var(--boxColor);
   padding: 5px;
 }
 
 form input:hover {
-  box-shadow: 1px 1px 5px gray;
+  box-shadow: 1px 1px 5px var(--boxColor);
 }
 
 textarea:hover {
-  box-shadow: 1px 1px 5px gray;
+  box-shadow: 1px 1px 5px var(--boxColor);
 }
 
 textarea {
   border-radius: 5px;
   outline: 0;
   border-color: transparent;
-  box-shadow: 1px 2px 5px gray;
+  box-shadow: 1px 2px 5px var(--boxColor);
   padding: 5px;
 }
 
 .postBtn {
-  background-color: #0000cc;
+  background-color: var(--primaryColor);
   padding: 10px;
   width: 100px;
   text-align: center;
@@ -69,7 +70,7 @@ textarea {
 }
 
 .postBtn a {
-  color: white;
+  color: var(--defaultColor);
   display: block;
   width: 100%;
   height: 100%;

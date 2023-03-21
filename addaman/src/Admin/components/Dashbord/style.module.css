@@ -1,5 +1,5 @@
 .iname {
-  color: #444a53;
+  color: var(--textColor);
   padding: 10px 30px 0 30px;
   font-size: 24px;
   font-weight: 700;
@@ -8,7 +8,7 @@
 .board {
   width: 94%;
   margin: 30px 0 30px 30px;
-  background: #fff;
+  background: var(--defaultColor);
   border-radius: 8px;
   text-align: center;
 }
@@ -24,15 +24,15 @@ table {
 }
 
 tr td {
-  border-bottom: 1px solid #d7dbe6;
+  border-bottom: 1px solid var(--cardColor);
   padding: 10px;
 }
 
 thead th {
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: 400;
-  background: #f9fafb;
+  font-weight: 550;
+  background: var(--defaultColor);
   padding: 15px;
 }
 
@@ -44,16 +44,16 @@ td img {
 }
 
 tbody tr:hover {
-  background: aliceblue;
+  background: var(--cardColor);
 }
 
 .delete {
   font-size: 14px;
-  color: #cc0000;
+  color: var(--deleteColor);
   padding-right: 20px;
 }
 
 .edit {
   font-size: 14px;
-  color: #0000cc;
+  color: var(--primaryColor)
 }

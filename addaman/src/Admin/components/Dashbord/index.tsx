@@ -48,7 +48,7 @@ const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
                     <td>{item.title}</td>
                     <td>{item.desc}</td>
                     <td>{item.cost}</td>
-                    <td className={styled.edit}><Link to="/update" onClick={() => {
+                    <td><Link to="/update" className={styled.edit} onClick={() => {
                         sendData(item.title);
                       }}>
                         <i className="fa-solid fa-pen-to-square"></i>
