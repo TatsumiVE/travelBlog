@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "./style.module.css";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar";
+import Styles from "../main.module.css";
+import { CrudContext } from "../../../DestinationData/context";
 
-type Props = {
-  add: any;
-};
+const Create = () => {
+  const { addData } = useContext(CrudContext);
+  const [id, setId] = useState(7);
+  const defaultData = {
+    id: "",
+    image: "",
+    title: "",
+    desc: "",
+    cost: "",
+    duration: "",
+  };
 
-const Create: React.FC<Props> = ({ add }) => {
-  const [image, setImage] = useState("");
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [price, setPrice] = useState("");
-  const [duration, setDuration] = useState("");
-
+  const [data, setData] = useState(defaultData);
   const handleAdd = (e: any) => {
-    e.preventDefault();
-    console.log(image);
-    add(image, title, desc, price, duration);
-    setImage("");
-    setTitle("");
-    setDesc("");
-    setPrice("");
-    setDuration("");
+    addData({ ...data, id });
+    setData(defaultData);
+    setId(id + 1);
   };
   return (
-    <>
+    <div className={Styles.dashboardContainer}>
+      <Navbar />
       <div className={styled.createContent}>
         <h3 className={styled.iname}>Create</h3>
       </div>
@@ -41,8 +42,7 @@ const Create: React.FC<Props> = ({ add }) => {
                 if (!e.target.files) return;
                 const file = e.target.files[0];
                 const src = URL.createObjectURL(file);
-                setImage(src);
-                console.log(file, src);
+                setData((d) => ({ ...d, image: src }));
               }}
             />
           </div>
@@ -50,41 +50,54 @@ const Create: React.FC<Props> = ({ add }) => {
           <div className={styled.titleGroup}>
             <label>Title</label>
             <input
-              value={title}
               type="text"
               placeholder="Enter title of the new post"
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) =>
+                setData((d) => ({ ...d, title: e.target.value }))
+              }
             />
           </div>
 
           <div className={styled.detailGroup}>
             <label>Description</label>
             <textarea
-              value={desc}
               name="detail"
               id=""
               placeholder="Enter detail description of your post"
-              onChange={(e) => setDesc(e.target.value)}
+              onChange={(e) =>
+                setData((d) => ({
+                  ...d,
+                  desc: e.target.value,
+                }))
+              }
             ></textarea>
           </div>
 
           <div className={styled.priceGroup}>
             <label>Price</label>
             <input
-              value={price}
               type="text"
               placeholder="Enter price of the new post"
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) =>
+                setData((d) => ({
+                  ...d,
+                  cost: e.target.value,
+                }))
+              }
             />
           </div>
 
           <div className={styled.titleGroup}>
             <label>Duration</label>
             <input
-              value={duration}
               type="text"
               placeholder="Enter duration of the new post"
-              onChange={(e) => setDuration(e.target.value)}
+              onChange={(e) =>
+                setData((d) => ({
+                  ...d,
+                  duration: e.target.value,
+                }))
+              }
             />
           </div>
 
@@ -93,10 +106,9 @@ const Create: React.FC<Props> = ({ add }) => {
               Post
             </Link>
           </div>
-          {/* <button onClick={handleAdd}>Add</button> */}
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

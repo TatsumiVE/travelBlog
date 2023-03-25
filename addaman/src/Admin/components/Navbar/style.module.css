@@ -1,3 +1,5 @@
+/* Start Side Bar */
+
 .menu {
   background: #111827;
   width: 300px;
@@ -52,7 +54,7 @@ a {
 }
 
 .menuText > .items li a {
-  color:var(--boxColor);
+  color: var(--boxColor);
   font-weight: 300px;
   transition: 0.3s ease;
 }
@@ -87,7 +89,65 @@ a {
   background-color: var(--boxColor);
 }
 
-.logoutBtn>a:hover {
+.logoutBtn > a:hover {
   color: var(--defaultColor);
 }
 
+/* End Side Bar */
+
+.dashboardContainer {
+  display: flex;
+  background-color: var(--defaultColor);
+  font-family: var(--roboto);
+}
+
+.navBar {
+  width: calc(100% - 300px);
+}
+
+.navBar .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--defaultColor);
+  padding: 15px 30px;
+  border-bottom: 3px solid var(--primaryColor);
+}
+
+.navBar .nav .search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid var(--defaultColor);
+  border-radius: 4px;
+}
+
+.navBar .nav .search i {
+  margin-right: 14px;
+}
+
+.navBar .nav .search input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.navBar .nav .profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navBar .nav .profile i {
+  margin-right: 20px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.navBar .nav .profile img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}

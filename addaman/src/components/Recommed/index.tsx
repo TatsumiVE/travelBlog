@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "./recommend.module.css";
 
 import DestinationCard from "../Card/Destination";
 
-import { data } from "../../DestinationData";
+import { CrudContext } from "../../DestinationData/context";
 
 const packages = [
   "The Weekend Break",
@@ -14,6 +14,7 @@ const packages = [
 ];
 
 const Recommended = () => {
+  const { data } = useContext(CrudContext);
   return (
     <section id="places">
       <div className="inner">
@@ -28,7 +29,7 @@ const Recommended = () => {
           </ul>
         </div>
         <div className={styled.destinations}>
-          {data.map((destination, index) => {
+          {data.map((destination: any, index: number) => {
             return (
               <DestinationCard
                 image={destination.image}

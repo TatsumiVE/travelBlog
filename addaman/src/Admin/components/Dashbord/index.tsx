@@ -1,26 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import styled from "./Style.module.css";
-// import Destination from "../../../assets/Singapore.png";
+import styled from "./style.module.css";
+import { CrudContext } from "../../../DestinationData/context";
+import Navbar from "../Navbar";
+import Styles from "../main.module.css";
 
-type Props = {
-  data: datas[];
-  sendData: any;
-  handledDelete: any;
-};
-
-type datas = {
-  image: string;
-  title: string;
-  desc: string;
-  cost: string;
-  duration: string;
-};
-
-const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
-  console.log(data);
+const Dashboard = () => {
+  const { data, sendData, deleteData } = useContext(CrudContext);
   return (
-    <>
+    <div className={Styles.dashboardContainer}>
+      <Navbar />
       <div className={styled.boardContent}>
         <h3 className={styled.iname}>Dashboard</h3>
 
@@ -52,7 +41,8 @@ const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
                       <Link
                         to="/update"
                         onClick={() => {
-                          sendData({ ...item, index });
+                          console.log(item);
+                          sendData(item);
                         }}
                       >
                         <i className="fa-solid fa-pen-to-square"></i>
@@ -60,9 +50,7 @@ const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
                     </td>
                     <td
                       className={styled.delete}
-                      onClick={() => {
-                        handledDelete(item.title);
-                      }}
+                      onClick={() => deleteData(item.id)}
                     >
                       <i className="fa-regular fa-trash-can" id="delete"></i>
                     </td>
@@ -73,7 +61,7 @@ const Dashboard: React.FC<Props> = ({ data, handledDelete, sendData }) => {
           </table>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Dashboard;

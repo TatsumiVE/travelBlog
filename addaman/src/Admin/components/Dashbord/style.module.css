@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
+.boardContent {
+  font-family: "Roboto", sans-serif;
+}
 .iname {
   color: var(--textColor);
   padding: 10px 30px 0 30px;
@@ -47,13 +51,13 @@ tbody tr:hover {
   background: var(--textColor);
 }
 
-.delete i{
+.delete i {
   font-size: 14px;
   color: var(--deleteColor);
   padding-right: 20px;
 }
 
-.edit i{
+.edit i {
   font-size: 14px;
   color: var(--primaryColor);
 }

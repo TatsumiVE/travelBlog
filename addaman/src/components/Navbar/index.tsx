@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "./navbar.module.css";
 const navItem = [
   { link: "/", label: "Home" },
@@ -10,10 +11,8 @@ const Navbar = () => {
   return (
     <header>
       <div className="inner">
-
         <div className={styled.layoutHeader}>
           <div className={styled.logo}>
-
             <a href="/" target="_self">
               Travel
             </a>
@@ -32,9 +31,9 @@ const Navbar = () => {
             </ul>
           </nav>
           <div className={styled.login}>
-            <a href="/login">
+            <Link to="/dashboard">
               <i className="fa-solid fa-circle-user"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

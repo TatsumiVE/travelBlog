@@ -2,9 +2,11 @@ import Button from "../Button";
 import "../../App.css";
 import styled from "./detail.module.css";
 import Destination1 from "../../assets/Singapore.png";
-import { data } from "../../DestinationData";
+import { CrudContext } from "../../DestinationData/context";
+import { useContext } from "react";
 
 const Detail = () => {
+  const { data } = useContext(CrudContext);
   return (
     <section className="detail">
       <div className={styled.detailWrapper}>
