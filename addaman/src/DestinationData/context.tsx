@@ -1,5 +1,5 @@
 import { ReactElement, createContext, useState } from "react";
-import { DataType, Context, ContextType } from "./data";
+import { Context, ContextType } from "./data";
 
 export const CrudContext = createContext<ContextType>(Context);
 

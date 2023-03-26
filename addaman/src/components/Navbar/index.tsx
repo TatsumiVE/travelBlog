@@ -31,7 +31,7 @@ const Navbar = () => {
             </ul>
           </nav>
           <div className={styled.login}>
-            <Link to="/dashboard">
+            <Link to="/login">
               <i className="fa-solid fa-circle-user"></i>
             </Link>
           </div>

@@ -1,12 +1,12 @@
 import styled from "./login.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
-const data = [{ email: "1234", password: "1234" }];
+const data = [{ email: "john@gmail.com", password: "1234" }];
 
 const Login: React.FC = () => {
   const { login } = useContext(AuthContext);
@@ -14,25 +14,43 @@ const Login: React.FC = () => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [emailError, setEmailError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const [loginData, setData] = useState(data);
 
-  // const dashboard = (e: any) => {
-  //   e.preventDefault();
+  const dashboard = (e: any) => {
 
-  //   if (email === "" && password === "") {
-  //     alert("Please enter email and password");
-  //   } else {
-  //     loginData.filter((item) => {
-  //       if (item.email === email && item.password === password) {
-  //         login();
-  //         navigate("/dashboard");
-  //       } else {
-  //         alert("Your email and password was wrong");
-  //       }
-  //     });
-  //   }
-  // };
+    e.preventDefault();
+
+    if (email == "") {
+      setEmailError("Enter your email.");
+    } else {
+      setEmailError("");
+    }
+
+    if (password == "") {
+      setPasswordError("Enter your password.");
+    } else {
+      setPasswordError("");
+    }
+
+    if (email != "" && password != "") {
+      loginData.filter(item => {
+        if (item.email === email && item.password === password) {
+          login();
+          navigate("/dashboard")
+        } else {
+          setError("Your email and password was wrong.");
+        }
+      })
+    } else {
+      setError("Please enter email and password.");
+    }
+
+  }
+
 
   return (
     <div className={styled.loginContainer}>
@@ -51,6 +69,9 @@ const Login: React.FC = () => {
       <div className={styled.loginForm}>
         <div className={styled.login}>
           <div className={styled.text}>
+            <div className={styled.error}>
+              {error}
+            </div>
             <h1>
               Hello{" "}
               <span>
@@ -66,10 +87,14 @@ const Login: React.FC = () => {
                 type="email"
                 name=""
                 id=""
+                value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
+              <span className={styled.error}>
+                {emailError}
+              </span>
             </div>
 
             <div className={styled.passwordGroup}>
@@ -78,14 +103,18 @@ const Login: React.FC = () => {
                 type="password"
                 name=""
                 id=""
+                value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
+              <span className={styled.error}>
+                {passwordError}
+              </span>
             </div>
 
             <div className={styled.button}>
-              <Link to="/dashboard">Login</Link>
+              <Link to="/dashboard" onClick={dashboard}>Login</Link>
             </div>
 
             <div className={styled.button}>
