@@ -87,7 +87,7 @@ const Update = () => {
               onChange={(e) =>
                 setNewData((d: any) => ({
                   ...d,
-                  price: e.target.value,
+                  cost: e.target.value,
                 }))
               }
             />
